@@ -19,6 +19,10 @@ export function AddUserComponent() {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
+    if (!name) {
+      return;
+    }
+
     await createUser({
       variables: {
         name,
@@ -29,6 +33,8 @@ export function AddUserComponent() {
         }));
       },
     });
+
+    setName("");
   };
 
   return (
