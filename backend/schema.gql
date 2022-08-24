@@ -3,8 +3,12 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input CreateUserInput {
+  name: String!
+}
+
 type Mutation {
-  createUser(name: String!): User!
+  createUser(data: CreateUserInput!): User!
 }
 
 type Query {
